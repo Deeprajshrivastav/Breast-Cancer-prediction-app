@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<style>
+  body {
+    background-color: #223845;
+  }
+
+  input {
+    height: 37px;
+    width: 260px;
+    text-align: center;
+    border: 2px solid #3498db;
+    margin: 6px;
+    border-radius: 20px;
+    outline: none;
+    background: none;
+    transition: 0.5s;
+    color: white;
+    font-size: 20px;
+  }
+
+  button {
+    background-color: #2e4bef;
+    margin-top: 7px;
+    height: 35px;
+    width: 120px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+    border: 2px solid red;
+  }
+
+  button:hover {
+    font-size: 18px;
+    background-color: #a1aae0;
+    border: 2px solid #ed5555;
+  }
+
+  .cointainer {
+    background-color: #191919;
+    height: 300px;
+    width: 420px;
+    margin: 10px;
+    padding: 10px;
+    font: white;
+    border: 2px solid white;
+    border-radius: 42px;
+  }
+
+  .form {
+    position: fixed;
+    margin-left: 27px;
+    font-weight: bold;
+    font-size: 19px;
+  }
+
+  b {
+    color: white;
+    margin: 4px;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    display: inline-block;
+  }
+
+  .box {
+    top: 47%;
+    margin: 10px;
+    padding: 20px;
+    position: sticky;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  a {
+    margin-top: 10px;
+    height: 20px;
+    color: white;
+    font-size: 24px;
+  }
+
+  a:hover {
+    color: red;
+    font-size: 25px;
+  }
+
+  p {
+    color: red;
+    font-size: 18px;
+  }
+
+  .alert {
+    height: 50px;
+    width: 250px;
+  }
+</style>
+
+<body>
+
+  <div class="box">n
+    <center>
+      <h1 style="text-align:center; font-size: 36px;color:white; ">Registration Forrm</h1>
+    </center>
+    <div class="cointainer">
+      <center>
+        <div class="alert">
+          <p>{{msg}}</p>
+        </div>
+        <form class="form" action="{{ url_for('home')}}" method="post">
+          <b>Username &nbsp;</b><input type="text" name="name" required="required" placeholder="Enter Username"><br>
+          <b>&nbsp; &nbsp; Email &nbsp; &nbsp; </b> <input type="email" name="email" id="email" onblur="lower()" placeholder="Enter Email"><br>
+          <b>&nbsp; &nbsp; Mobile &nbsp; </b> <input type="tel" name="mobile" placeholder="Enter Mobile no"><br>
+          <b>&nbsp; &nbsp;</b>
+          &nbsp; <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Submit</strong></button><br>
+        </form>
+      </center>
+    </div><br>
+    <center><a class="a" href="{{ url_for('already')}}">already registered</a></center>
+  </div>
+  <script>
+    function lower(){
+      let email = document.getElementById('email');
+      email.value = email.value.toLowerCase();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>About Breast Cancer</title>
+  <style>
+    body{
+      background-color: #fff6f8;
+    }
+    .para {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin: 2px;
+    }
+    a{
+      border: 1.5px solid #406a67;
+      border-radius: 12px;
+    }
+    a:hover{
+      border: 1.5px solid white;
+      border-radius: 12px;
+      background-color: #54a8a2;
+    }
+    iframe{
+      margin-top: 20vh;
+      margin-bottom: 3vh;
+      background-color: #ea9fc4;
+    }
+  </style>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#406a67;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('Home')}}" style="color:#fff1f1; font-weight:bold;">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#aa0615;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand " href="{{ url_for('prediction')}}" style="color:#fff1f1; font-weight:bold; ">Predict Cancer</a> &nbsp;&nbsp;
+          <a class="navbar-brand" href="{{ url_for('symptom')}}" style="color:#fff1f1; font-weight:bold;"> Symptoms</a>&nbsp;&nbsp;
+          <a class="navbar-brand" href="{{url_for('prevention')}}" style="color:#fff1f1; font-weight:bold; "> Prevention</a>&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style=" font-weight:bold;">About Breast Cancer</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a class="navbar-brand" href="{{url_for('logout')}}" style="color:#5c2020; font-weight:bold;">Logout</a>&nbsp;&nbsp;
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="para">
+    <br><br>
+    <strong>
+      <p style="font-size:20px; margin-bottom:0px;">How common is breast cancer ?</p>
+    </strong>
+    <ul style="margin-top:0px;">
+      <li>According to the Centers for Disease Control and Prevention (CDC)Trusted Source,
+        breast cancer is the most common cancer in women. According to statistics from
+        the ACS, approximately 268,600 new cases of invasive breast cancer are
+        expected to be diagnosed in the United States in 2019. Invasive breast cancer is
+        cancer that has spread from the ducts or glands to other parts of the breast.
+        More than 41,000 women are expected to die from the disease.</li>
+      <li>
+        Breast cancer can also be diagnosed in men. The ACS also estimates that in
+        2019, more than 2,600 men will be diagnosed, and approximately 500 men will
+        die from the disease.
+      </li>
+    </ul>
+    <strong>
+      <p style="font-size:20px; margin-bottom:0px;">Breast Cancer Overview.</p>
+    </strong>
+    <ul style="margin-top:0px;">
+      <li>Cancer occurs when changes called mutations take place in genes that regulate
+        cell growth. The mutations let the cells divide and multiply in an uncontrolled way.</li>
+      <li>Breast cancer is cancer that develops in breast cells. Typically, the cancer forms
+        in either the lobules or the ducts of the breast. Lobules are the glands that
+        produce milk, and ducts are the pathways that bring the milk from the glands to
+        the nipple. Cancer can also occur in the fatty tissue or the fibrous connective
+        tissue within your breast.</li>
+      <li>The uncontrolled cancer cells often invade other healthy breast tissue and can
+        travel to the lymph nodes under the arms. The lymph nodes are a primary
+        pathway that help the cancer cells move to other parts of the body.</li>
+    </ul>
+    <h3 style="margin-bottom:0px;">Breast Cancer stages.</h3>
+    <p style="margin:0px;">
+      Breast cancer can be divided into stages based on how large the tumor or
+      tumors are and how much it has spread. Cancers that are large and/or have
+      invaded nearby tissues or organs are at a higher stage than cancers that are
+      small and/or still contained in the breast. In order to stage a breast cancer,
+      doctors need to know.</p>
+    <ul>
+      <li>If the cancer is invasive or noninvasive.</li>
+      <li>How large the tumor is.</li>
+      <li>Whether the lymph nodes are involved.</li>
+      <li>If the cancer has spread to nearby tissue or organs.</li>
+    </ul><br>
+    <strong>
+      <h3 style="margin: 0px;">Breast cancer has five main stages: stages 0 to 5</h3>
+    </strong>
+    <ul style="margin:0px;">
+      <li>Stage 0 breast cancer:</li>
+      <ul>
+        <li> <strong>Stage 0:</strong>DCancer cells in DCIS remain confined to the ducts in the breast
+          and have not spread into nearby tissue. </li>
+      </ul>
+      <li>Stage 1 breast cancer</li>
+      <ul>
+        <li><strong>Stage 1A: </strong>The primary tumor is 2 centimeters wide or less and the lymph
+          nodes are not affected.</li>
+        <li><strong>Stage 1B: </strong>Cancer is found in nearby lymph nodes, and either there is no
+          tumor in the breast, or the tumor is smaller than 2 cm.</li>
+      </ul>
+      <li>Stage 2 breast cancer</li>
+      <ul>
+        <li><strong>Stage 2A:</strong> The tumor is smaller than 2 cm and has spread to 1–3 nearby
+          lymph nodes, or it’s between 2 and 5 cm and hasn’t spread to any lymph
+          nodes.</li>
+        <li> <strong>Stage 2B:</strong> The tumor is between 2 and 5 cm and has spread to 1–3
+          axillary (armpit) lymph nodes, or it’s larger than 5 cm and hasn’t spread to
+          any lymph nodes.</li>
+      </ul>
+      <li>Stage 3 breast cancer</li>
+      <ul>
+        <li><strong>Stage 3A : </strong></li>
+        <ul>
+          <li>The cancer has spread to 4–9 axillary lymph nodes or has enlarged
+            the internal mammary lymph nodes, and the primary tumor can be
+            any size.</li>
+          <li>Tumors are greater than 5 cm and the cancer has spread to 1–3
+            axillary lymph nodes or any breastbone nodes.</li>
+        </ul>
+        <li><strong>Stage 3B: </strong> A tumor has invaded the chest wall or skin and may or may not
+          have invaded up to 9 lymph nodes.</li>
+        <li><strong>Stage 3C: </strong> Cancer is found in 10 or more axillary lymph nodes, lymph
+          nodes near the collarbone, or internal mammary nodes.</li>
+      </ul>
+      <li>Stage 4 breast cancer: </li>
+      <ul>
+        <li>Stage 4 breast cancer can have a tumor of any size, and its cancer cells have
+          spread to nearby and distant lymph nodes as well as distant organs.</li>
+      </ul>
+    </ul><br>
+    <h3 style="margin: 0px;">Preemptive treatment</h3>
+    <ul style="margin:0px;">
+      <li>Some women are at increased risk of breast cancer due to hereditary factors. For
+        instance, if your mother or father has a BRCA1 or BRCA2 gene mutation, you’re
+        at higher risk of having it as well. This significantly raises your risk of breast
+        cancer.</li>
+      <li>If you’re at risk for this mutation, talk to your doctor about your diagnostic and
+        prophylactic treatment options. You may want to be tested to find out if you
+        definitely have the mutation. And if you learn that you do have it, discuss with
+        your doctor any preemptive steps you can take to reduce your risk of getting
+        breast cancer.</li>
+    </ul><br>
+    <h3 style="margin: 0px;">Breast cancer treatment</h3> </strong>
+    <p style="margin:0px;">
+      Your breast cancer’s stage, how far it has invaded (if it has), and how big the
+      tumor has grown all play a large part in determining what kind of treatment you’ll
+      need.
+      To start, your doctor will determine your cancer’s size, stage, and grade (how
+      likely it is to grow and spread). After that, you can discuss your treatment options.
+      Surgery is the most common treatment for breast cancer. Many women have
+      additional treatments, such as chemotherapy, targeted therapy, radiation, or
+      hormone therapy.</p>
+    <h3>Surgery</h3>
+    Several types of surgery may be used to remove breast cancer, including:
+    <ul>
+      <li> <strong>Lumpectomy: </strong> This procedure removes the tumor and some surrounding
+        tissue, leaving the rest of the breast intact.</li>
+      <li><strong>Mastectomy: </strong>In this procedure, a surgeon removes an entire breast.In a
+        double mastectomy, both breasts are removed.</li>
+      <li><strong>Sentinel node biopsy:</strong> This surgery removes a few of the lymph nodes
+        that receive drainage from the tumor. These lymph nodes will be tested. If
+        they don’t have cancer, you may not need additional surgery to remove
+        more lymph nodes.</li>
+      <li><strong>Axillary lymph node dissection: </strong>If lymph nodes removed during a
+        sentinel node biopsy contain cancer cells, your doctor may remove
+        additional lymph nodes.</li>
+      <li><strong>Contralateral prophylactic mastectomy: </strong>Even though breast cancer may
+        be present in only one breast, some women elect to have a contralateral
+        prophylactic mastectomy. This surgery removes your healthy breast to
+        reduce your risk of developing breast cancer again.</li>
+    </ul>
+    <br>
+    <h3>Radiation therapy:</h3>
+    With radiation therapy, high-powered beams of radiation are used to target and
+    kill cancer cells. Most radiation treatments use external beam radiation. This
+    technique uses a large machine on the outside of the body.
+    Advances in cancer treatment have also enabled doctors to irradiate cancer from
+    inside the body. This type of radiation treatment is called brachytherapy. To
+    conduct brachytherapy, surgeons place radioactive seeds, or pellets, inside the
+    body near the tumor site. The seeds stay there for a short period of time and
+    work to destroy cancer cells.
+    <br>
+    <h3>Chemotherapy:</h3>
+    <p style="margin:0px;">Chemotherapy is a drug treatment used to destroy cancer cells. Some people
+      may undergo chemotherapy on its own, but this type of treatment is often used
+      along with other treatments, especially surgery.
+      <br>
+      In some cases, doctors prefer to give patients chemotherapy before surgery. The
+      hope is that the treatment will shrink the tumor, and then the surgery will not
+      need to be as invasive. Chemotherapy has many unwanted side effects, so
+      discuss your concerns with your doctor before starting treatment.
+    </p>
+    <br>
+    <h3 style="margin:0px;">Hormone therapy:</h3>
+    <p style="margin:0px;">
+      If your type of breast cancer is sensitive to hormones, your doctor may start you
+      on hormone therapy. Estrogen and progesterone, two female hormones, can
+      stimulate the growth of breast cancer tumors. Hormone therapy works by
+      blocking your body’s production of these hormones, or by blocking the hormone
+      receptors on the cancer cells. This action can help slow and possibly stop the
+      growth of your cancer.
+    </p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZWqfoBj2bsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/xVx6ME6i4-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </center>
+  
+</body>
+
+</html>

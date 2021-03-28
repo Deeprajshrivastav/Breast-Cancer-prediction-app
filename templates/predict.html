@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Predict Cancer</title>
+  <style>
+    /* CSS code for button */
+    body {
+      background: url('static/image/BOUNCEBanner.jpg');
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+    }
+
+    .login {
+      position: absolute;
+      left: 51%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap; */
+
+      /* margin-top: 10vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; */
+    }
+
+
+    body h1 {
+      margin-bottom: 25px;
+      font-size: 44px;
+      font-weight: bold;
+      color: #b30101;
+      opacity: 1;
+    }
+
+
+    input[type='number'] {
+      font-size: 16px;
+      height: 25px;
+      width: 190px;
+      text-align: center;
+    }
+
+    a {
+      border: 1.5px solid #406a67;
+      border-radius: 12px;
+    }
+
+    a:hover {
+      border: 1.5px solid white;
+      border-radius: 12px;
+      background-color: #54a8a2;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+    }
+    .alert{
+      width: 102vw;
+    }
+
+    .navbar {
+      width: 102vw;
+      background-size: cover;
+    }
+    .close{
+      float: right;
+      margin-right: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#406a67;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('Home')}}" style="color:#fff1f1; font-weight:bold;">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#aa0615;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand " href="{{ url_for('about')}}" style="color:#fff1f1; font-weight:bold; ">About Breast Cancer</a> &nbsp;&nbsp;
+          <a class="navbar-brand" href="{{ url_for('symptom')}}" style="color:#fff1f1; font-weight:bold;"> Symptoms</a>&nbsp;&nbsp;
+          <a class="navbar-brand" href="{{url_for('prevention')}}" style="color:#fff1f1; font-weight:bold; "> Prevention</a>&nbsp;&nbsp;
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style=" font-weight:bold;">Predict Cancer</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a class="navbar-brand" href="{{url_for('logout')}}" style="color:#5c2020; font-weight:bold;">Logout</a>&nbsp;&nbsp;
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong><center>Please fill the data carefullly.</center></strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="login">
+    <center><br><br><br><br>
+      <form action="{{ url_for('predict')}}" method="post"><br>
+        <h1>Enter the feature of tumor </h1>
+        <br>
+        <input type="number" step="any" name="mean_radius" placeholder="mean radius" required="required" />
+        <input type="number" step="any" name="mean_texture" placeholder="mean texture" required="required" />
+        <input type="number" step="any" name="mean_perimeter" placeholder="mean perimeter" required="required" />
+        <input type="number" step="any" name="mean_area" placeholder="mean area" required="required" />
+        <input type="number" step="any" name="mean_smoothness" placeholder="mean smoothness" required="required" />
+        <br>
+        <input type="number" step="any" name="mean_compactness" placeholder="mean compactness" required="required" />
+
+        <input type="number" step="any" name="mean_concavity" placeholder="mean concavity" required="required" />
+        <input type="number" step="any" name="mean_concave_points" placeholder="mean concave points" required="required" />
+        <input type="number" step="any" name="mean_symmetry" placeholder="mean symmetry" required="required" />
+        <input type="number" step="any" name="mean_fractal_dimension" placeholder="mean fractal dimension" required="required" /><br>
+        <input type="number" step="any" name="radius_error" placeholder="radius error" required="required" />
+        <input type="number" step="any" name="texture_error" placeholder="texture error" required="required" />
+
+        <input type="number" step="any" name="perimeter_error" placeholder="perimeter error" required="required" />
+        <input type="number" step="any" name="area_error" placeholder="area error " required="required" />
+        <input type="number" step="any" name="smoothness_error" placeholder="smoothness error" required="required" /><br>
+        <input type="number" step="any" name="compactness_error" placeholder="compactness error" required="required" />
+        <input type="number" step="any" name="concavity_error" placeholder="concavity error" required="required" />
+        <input type="number" step="any" name="concave_points_error" placeholder="concave points error" required="required" />
+
+        <input type="number" step="any" name="symmetry_error" placeholder="symmetry error" required="required" />
+        <input type="number" step="any" name="fractal_dimension_error" placeholder="fractal dimension error" required="required" /><br>
+        <input type="number" step="any" name="worst_radius" placeholder="worst radius" required="required" />
+        <input type="number" step="any" name="worst_texture" placeholder="worst texture" required="required" />
+        <input type="number" step="any" name="worst_perimeter" placeholder="worst perimeter" required="required" />
+        <input type="number" step="any" name="worst_area" placeholder="worst area" required="required" />
+
+        <input type="number" step="any" name="worst_smoothness" placeholder="worst smoothness" required="required" /><br>
+        <input type="number" step="any" name="worst_compactness" placeholder="worst compactness" required="required" />
+        <input type="number" step="any" name="worst_concavity" placeholder="worst concavity" required="required" />
+        <input type="number" step="any" name="worst_concave_points" placeholder="worst concave points" required="required" />
+        <input type="number" step="any" name="worst_symmetry" placeholder="worst symmetry" required="required" />
+        <input type="number" step="any" name="worst_fractal_dimension" placeholder="worst fractal dimension" required="required" />
+        <br>
+        <br>
+        <strong><button type="submit" class="btn btn-primary" onclick="next()"><strong>Predict Cancer</strong></button></strong>
+      </form>
+    </center>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

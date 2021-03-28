@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Breast Cancer</title>
+  <style>
+    body {
+      background: #ebeddc;
+      background-attachment: fixed;
+    }
+
+    .img {
+      background-image: url('static/image/export1606403401234.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70% 130%;
+      height: 350px;
+    }
+
+    input {
+      background-color: #c4b3a6;
+      background-position: center;
+      border-radius: 13px;
+      font-size: 16px;
+      align-items: center;
+      font-weight: bold;
+      color: red;
+      border-width: 0px;
+      width: 150px;
+      border: 2px solid red;
+      cursor: pointer;
+      font-weight: bold;
+      height: 35px;
+    }
+
+    input:hover {
+      background-color: #e3d8d0;
+      font-size: 18px;
+      border: 2px solid #fb4a4a;
+    }
+
+    .box {
+      position: absolute;
+      align-content: center;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 650px;
+      background-position: center;
+      height: 370px;
+    }
+    form {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="img">
+    </div>
+    <form action="{{ url_for('reg')}}" method="post">
+      <input type="submit" value="Lets Start">
+    </form>
+  </div>
+</body>
+</html>

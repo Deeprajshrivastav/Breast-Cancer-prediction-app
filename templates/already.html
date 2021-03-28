@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <title>Log in</title>
+  <style>
+    body {
+      background-color: #223845;
+    }
+
+    .coint {
+      background-color: #191919;
+      border-radius: 30px;
+      height: 220px;
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid white;
+    }
+
+    .cointainer {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      height: 240px;
+      width: 450px;
+
+    }
+
+    input[type="text"] {
+      text-align: center;
+      height: 39px;
+      width: 265px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      border: 2px solid #3498db;
+      border-radius: 20px;
+      outline: None;
+      background: none;
+      color: white;
+    }
+
+    .for {
+
+      height: 100px;
+      width: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #191919;
+    }
+
+    input[type="submit"] {
+      cursor: pointer;
+      outline: none;
+      width: 115px;
+      height: 37px;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 18px;
+      background-color: #065dc0;
+      color: white;
+      font-size: 20px
+    }
+
+    input[type="submit"]:hover {
+      font-size: 23px;
+      background-color: #448ee3;
+    }
+
+    h1 {
+      margin-top: 100px;
+      color: red;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: white;
+    }
+
+    a {
+      align-items: center;
+      color: white;
+      font-size: 26px;
+      margin-top: 40px;
+    }
+    a:hover{
+      color: red;
+      font-size: 27px;
+    }
+  </style>
+  <title></title>
+</head>
+
+<body>
+  <center>
+    <h1>{{alert}}</h1>
+  </center>
+  <div class="cointainer">
+    <div class="coint">
+      <h2>Enter Registered Mobile/Email</h2>
+      <form class="for" action="{{url_for('hom')}}" method="post">
+        <input type="text" name="mob" placeholder="Enter Mobile/Email" required="required">
+        <br>
+        <input type="submit" name="" value="Log in">
+      </form>
+    </div>
+    <br>
+    <center><a href="{{url_for('reg')}}">new user</a></center>
+  </div>
+
+</body>
+
+</html>
