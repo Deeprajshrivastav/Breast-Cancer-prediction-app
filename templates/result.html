@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Result</title>
+  <style>
+  body{
+    background-color: #fff6f8;
+  }
+    .para {
+      /* background-color: #fff6f8; */
+      /* background-color: #fcfcfc; */
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-top: 0px;
+    }
+    a{
+      border: 1.5px solid #406a67;
+      border-radius: 12px;
+    }
+    a:hover{
+      border: 1.5px solid white;
+      border-radius: 12px;
+      background-color: #54a8a2;
+    }
+    #iframe{
+      margin-top: 20vh;
+      margin-bottom: 5vh;
+      background-color: #ea9fc4;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#406a67;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('Home')}}" style="color:#fff1f1; font-weight:bold;">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#aa0615;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand " href="{{ url_for('prediction')}}" style="color:#fff1f1; font-weight:bold; ">Predict Cancer</a> &nbsp;&nbsp;
+          <a class="navbar-brand" href="{{ url_for('symptom')}}" style="color:#fff1f1; font-weight:bold;"> Symptoms</a>&nbsp;&nbsp;
+          <a class="navbar-brand" href="{{url_for('prevention')}}" style="color:#fff1f1; font-weight:bold; "> Prevention</a>&nbsp;&nbsp;
+        </ul>
+        <form class="d-flex">
+          <a class="navbar-brand" href="{{url_for('logout')}}" style="color:#5c2020; font-weight:bold;">Logout</a>&nbsp;&nbsp;
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="para">
+    <center><strong><br>
+        <h2 style="color:#ca0f02; margin-bottom:0px;">{{cancer_txt}}</h2>
+      </strong></center>
+    <center><strong>
+        <h3 style="color:#ca0f02; margin-top:0px;">{{sugs_txt}}</h3>
+      </strong></center>
+    <h3 style="margin:2px 0px 0px;">Breast cancer survival rate:</h3>
+    <ul style="margin-top:1px;">
+      <li style="margin-top:2px;">Breast cancer survival rates vary widely based on many factors. Two of the most
+        important factors are the type of cancer you have and the stage of the cancer at
+        the time you receive a diagnosis. Other factors that may play a role include your
+        age, gender, and race.</li>
+      <li>The good news is breast cancer survival rates are improving. According to
+        the ACS, in 1975, the 5-year survival rate for breast cancer in women was 75.2
+        percent. But for women diagnosed between 2008 and 2014, it was 90.6 percent.
+        Five-year survival rates for breast cancer differ depending on stage at diagnosis,
+        ranging from 99 percent for localized, early-stage cancers to 27 percent for
+        advanced, metastatic cancers.</li>
+    </ul>
+    <h3 style="margin:2px 0px 0px;">Breast cancer awareness:</h3>
+    <ul style="margin-top:1px;">
+      <li style="margin-top:2px;">Fortunately for women and men around the world, people today are increasingly
+        aware of the issues associated with breast cancer. Breast cancer awareness
+        efforts have helped people learn what their risk factors are, how they can reduce
+        their level of risk, what symptoms they should look for, and what kinds of
+        screening they should be getting.</li>
+      <li>Breast Cancer Awareness Month is held each October, but many people spread
+        the word throughout the year</li>
+    </ul>
+    <h3 style="margin:2px 0px 0px;">Breast cancer care:</h3>
+    <ul style="margin-top:1px;">
+      <li style="margin-top:2px;">If you detect an unusual lump or spot in your breast, or have any other symptoms of breast cancer,make an appointment to see your doctor. Chances are good that it’s not breast cancer. For instance, there are many
+        other potential causes for breast lumps.</li>
+    </ul>
+  </div>
+
+
+<center id="iframe">
+<iframe width="80%vw" height="400px" src="https://www.youtube.com/embed/ijNevj7iOMc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+
+</html>
