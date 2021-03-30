@@ -169,7 +169,7 @@ def contact():
 
 @app.route('/feedback', methods=["POST", "GET"])
 def feedback():
-    return render_template('feedback.html')
+    return render_template('try.html')
 
 
 @app.route('/submit', methods=["POST", "GET"])
