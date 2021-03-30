@@ -188,6 +188,11 @@ def submit():
     cursor.execute(statement, detail)
     db.commit()
     return render_template('last.html')
+  
+  
+@app.route('/send', methods=['POST', 'GET'])
+def send():
+    return render_template('contact.html')  
 
 
 if __name__ == '__main__':
