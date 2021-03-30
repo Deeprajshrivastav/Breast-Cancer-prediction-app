@@ -165,8 +165,7 @@ def predict():
 
 @app.route('/contact', methods=["POST", "GET"])
 def contact():
-    return render_template('contac.html')
-
+    return ("Hello world")
 
 @app.route('/feedback', methods=["POST", "GET"])
 def feedback():
