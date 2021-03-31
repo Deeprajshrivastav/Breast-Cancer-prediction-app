@@ -1,174 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <style media="screen">
-    body {
-      background-color: #fff4f4;
-      /* //#fff4f4; */
-      /* margin: auto;
-    margin-top: 10vh; */
-      /* align-content: center;
-    display: block; */
-      padding: 70px 0;
-      /* border: 3px solid green; */
-      text-align: center;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Feedback form</title>
+    <style>
+        body{
+      background-color: #2a2424b5;
+      color: white;
     }
+    .cointainer{
 
-    label {
-      font-size: 22px;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      display: inline-block;
     }
-
-    span {
+        label {
       font-size: 20px;
+      margin: 10px;
+      margin-bottom: 20px;
     }
-
-    input {
+      input {
       width: 20px;
       height: 20px;
+      margin-bottom: 0px;
     }
-
-    form {
-      background-color: #e9e9e9;
-      margin-bottom: 15vh;
-      font-size: 17px;
-      color: red;
-      border: 2px solid brown;
-      padding: 100px;
-      margin: 10vw;
-      margin-top: 1vh;
-      border-radius: 20px;
-
+    p{
+      font-size: 25px;
+      margin: 10px;
+      padding: 10px;
     }
-
-    textarea {
-      margin-top: 8px;
-      margin-left: 26px;
-      margin-right: 26px;
-      font-size: 18px;
-
+    form{
+      padding: 20px;
+      border: 2px solid white;
+      margin: 5px;
+      box-shadow: -3px 1px 8px 4px;
+      border-radius: 15px;
+      margin-bottom: 60px;
     }
-
-    #desc {
-      border: 3px solid black;
+    #comment, #area, #sug{
+      margin: 10px;
+      padding: 10px;
+          width: 305px;
+    height: 105px;
+    resize: none;
+    font-size: 16px;
     }
-
-    #sug {
-      border: 3px solid black;
+    h1{
+      font-size: 45px;
+      margin-bottom: 20px;
+      text-shadow: -3px 2px #c67070;
     }
-
-    h1 {
-
-      margin-top: 20px;
-      font-size: 40px;
-      margin-bottom: 50px;
-      text-decoration: underline;
-      font-style: normal;
-      color: #be0000;
-    }
-
-    p {
-      font-size: 20px;
-      margin-bottom: 6px;
-      margin-top: 20px;
-    }
-
-    button {
-      margin: 25px;
-      width: 100px;
-      height: 35px;
-      border: 3px solid brown;
-      border-radius: 5px;
-      font-size: 20px;
-      cursor: pointer;
-      background-color: #752020;
-      color: white;
+    .btn{
+      width: 90px;
+      height: 40px;
     }
   </style>
 </head>
 
 <body>
-  <form action="{{ url_for('submit')}}" method="post">
     <center>
-      <h1>Feedback form</h1>
-      <p>How much do you rate this app</p>
-      <input type="radio" id="rad5" name="rads" checked="checked" value="5" onclick="r5()" />
-      <label for="rad5">5</label>
-      <input type="radio" id="rad4" name="rads" value="4" onclick="r4()" />
-      <label for="rad4">4</label>
-      <input type="radio" id="rad3" name="rads" value="3" onclick="r3()" />
-      <label for="rad3">3</label>
-      <input type="radio" id="rad2" name="rads" value="2" onclick="r2()" />
-      <label for="rad2">2</label>
-      <input type="radio" id="rad1" name="rads" value="1" onclick="r1()" />
-      <label for="rad1">1</label>
-      <br>
-      <span id="result" style="color:brown;"></span><br>
-      <p>How would you describe your experience in this app</p>
-      <textarea placeholder="Enter your experience" id="desc" name="describe" rows="5" cols="40"></textarea>
-      <p>This app help you as needed</p>
-      <input type="radio" id="help1" name="help" checked="checked" value="1">
-      <label for="help1">Yes</label>
-      <input type="radio" id="help0" name="help" value="0">
-      <label for="help0">No</label>
-      <p>Any recommendation/suggestion to improve this app</p>
-      <textarea placeholder="Enter your suggestion" id="sug" name="sug" rows="5" cols="40"></textarea>
-      <p>Would you like to report any problem you are facing</p>
-      <input id="y" type="radio" name="prob" value="1" onclick="yes()">
-      <label for="y">Yes</label>
-      <input id="n" type="radio" name="prob" checked="checked" value="0" onclick="no()">
-      <label for="n">No</label>
-      <br>
-      <textarea placeholder="Enter your Problem" id="area" name="report" rows="5" cols="40"></textarea>
-      <br>
-      <button type="submit" name="button" onclick="pro()">Submit</button>
-    </center>
-  </form>
+        <div class="cointainer">
+            <h1>Feedback form</h1>
+            <form action="{{ url_for('submit')}}" method="post">
+                <p>How much do you rate this app</p>
+                <input type="radio" id="rad5" name="rads" checked="checked" value="5" onclick="r5()" />
+                <label for="rad5">5</label>
+                <input type="radio" id="rad4" name="rads" value="4" onclick="r4()" />
+                <label for="rad4">4</label>
+                <input type="radio" id="rad3" name="rads" value="3" onclick="r3()" />
+                <label for="rad3">3</label>
+                <input type="radio" id="rad2" name="rads" value="2" onclick="r2()" />
+                <label for="rad2">2</label>
+                <input type="radio" id="rad1" name="rads" value="1" onclick="r1()" />
+                <label for="rad1">1</label> <br>
+                <span id="result" style="color:white; font-size: 20px; margin-top: 0px;"></span> <br>
+                <label for="comment">How would you describe your experience in this app</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Enter your experience" name="describe"></textarea>
+                <p>This app help you as needed</p>
+                <input type="radio" id="help1" name="help" checked="checked" value="1">
+                <label for="help1">Yes</label>
+                <input type="radio" id="help0" name="help" value="0">
+                <label for="help0">No</label> <br>
+                <label for="comment">Any recommendation/suggestion to improve this app</label>
 
-  <script>
+                <textarea class="form-control" rows="5" id="sug" placeholder="Enter your suggestion" name="suggs"></textarea>
+
+                <p>Would you like to report any problem you are facing</p>
+                <input id="y" type="radio" name="prob" value="1" onclick="yes()">
+                <label for="y">Yes</label>
+                <input id="n" type="radio" name="prob" checked="checked" value="0" onclick="no()">
+                <label for="n">No</label>
+                <br>
+                
+                <textarea class="form-control" rows="5" id="area" placeholder="Enter your problem" name="report" ></textarea>
+
+                <button type="submit" class="btn btn-primary" onclick="pro()"> Submit </button>
+                <br>
+            </form>
+        </div>
+    </center>
+    <script>
     document.getElementById("area").style.borderWidth = "thin";
     document.getElementById("area").disabled = true;
 
     function yes() {
-      document.getElementById("area").style.borderColor = "black";
-      document.getElementById("area").style.borderWidth = "medium";
-      document.getElementById("area").disabled = false;
+
+        document.getElementById("area").style.borderWidth = "medium";
+        document.getElementById("area").disabled = false;
     }
 
     function no() {
-      document.getElementById("area").style.borderWidth = "thin";
-      document.getElementById("area").disabled = true;
+        document.getElementById("area").style.borderWidth = "thin";
+        document.getElementById("area").disabled = true;
     }
 
 
     function r5() {
-      result.innerHTML = "Excellent";
+        result.innerHTML = "Excellent";
     }
 
     function r4() {
-      result.innerHTML = "Good";
+        result.innerHTML = "Good";
     }
 
     function r3() {
-      result.innerHTML = "Average";
+        result.innerHTML = "Average";
     }
 
     function r2() {
-      result.innerHTML = "Bad";
+        result.innerHTML = "Bad";
     }
 
     function r1() {
-      result.innerHTML = "Poor";
+        result.innerHTML = "Poor";
     }
 
     function pro() {
-      var infor = confirm("Are you sure you want to submit ?");
-      console.log(infor);
+        var infor = confirm("Are you sure you want to submit ?");
+
+        console.log(infor);
     }
-  </script>
+    </script>
 </body>
-
-
 </html>
