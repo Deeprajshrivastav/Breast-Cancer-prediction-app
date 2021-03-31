@@ -180,7 +180,11 @@ def submit():
             feedback.append("NAN")
             continue
         feedback.append(i)
-
+        
+        
+    if len(feedback) == 5:
+        feedback.append('NAN')
+        
     statement = "Insert into FEEDBACK (mobile, rating, descr, needed, suggest, report, probl)" \
                 " values(%s, %s, %s, %s, %s, %s, %s)"
     detail = (mobile, feedback[0], feedback[1], feedback[2], feedback[3], feedback[4], feedback[5])
