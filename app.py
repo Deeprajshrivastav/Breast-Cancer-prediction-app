@@ -104,8 +104,6 @@ def Home():
 
 @app.route('/symptom', methods=["POST", "GET"])
 def symptom():
-    if len(name) < 2:
-        return render_template('first.html')
     return render_template('symptoms.html')
 
 
