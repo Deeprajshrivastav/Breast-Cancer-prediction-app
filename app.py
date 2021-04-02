@@ -111,22 +111,19 @@ def symptom():
 
 @app.route('/prevention', methods=["POSt", "GET"])
 def prevention():
-    if len(name) < 2:
-        return render_template('first.html')
+
     return render_template('prevention.html')
 
 
 @app.route('/about', methods=["POSt", "GET"])
 def about():
-    if len(name) < 2:
-        return render_template('first.html')
+
     return render_template('about.html')
 
 
 @app.route('/predict', methods=["POST", "GET"])
 def predict():
-    if len(name) < 2:
-        return render_template('first.html')
+
 
     input_features = []
 
