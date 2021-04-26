@@ -92,8 +92,7 @@ def home():
 
 @app.route('/prediction', methods=["POSt", "GET"])
 def prediction():
-    if len(name) < 2:
-        return render_template('first.html')
+
     return render_template('predict.html', name=name.title())
 
 
