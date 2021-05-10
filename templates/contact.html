@@ -1,169 +1,131 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-
-    <title>Contact us</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
     <style>
-    #contact {
-
-    background-image: url('static/image/contact.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.cointainer {
-    display: flex;
-    margin: auto;
-    margin-top: 2px;
-    padding: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-#contact .box1 {
-    color: white;
-    margin: 10px;
-    padding: 23px;
-    display: block;
-    margin-bottom: 0px;
-    margin-top: 25px;
-    margin-bottom: 0px;
-    width: 340px;
-    background: rgba(141, 184, 173, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-
-}
-
-#contact .box2 {
-    color: white;
-    margin-left: 10px;
-    padding: 18px;
-    display: block;
-    margin-bottom: 0px;
-    margin-top: 25px;
-    width: 340px;
-    background: rgba(141, 184, 173, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(6.5px);
-    -webkit-backdrop-filter: blur(6.5px);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.18);
-}
-.add {
-    display: flex;
-    margin-top: 28px;
-}
-
-p {
-    font-size: 16px;
-}
-
-#mob {
-    margin-left: 30px;
-}
-
-.form-control {
-    width: 260px;
-    height: 30px;
-}
-
-.tit {
-    margin-top: 0px;
-    color: white;
-    text-align: center;
-}
-
-#contact .box1 a {
-    color: white;
-    text-decoration: none;
-    margin-left: 60px;
-}
-
-textarea {
-    resize: none;
-}
-
-h1{
+        *{
+      margin: 0;
+      padding: 0;
+    }
+    .contact {
+      background: url('contact.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    h1{
     text-shadow: -3px 2px 1px #341616;
     margin-top: 0px;
-
+    color: #ff2424;
+    letter-spacing: 1.4px;
+    margin-top: 0px;
 }
+    .coinatiner{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    }
+    .box{
+      width: 380px;
+      margin: 20px;
+      padding: 20px;
+      background: rgba(141, 184, 173, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    #box1 .add {
+      margin: 14px;
+      padding: 15px;
+      display: flex;
+    }
+    #box1 .add p{
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+    #box1 .add a{
+       font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+    #box2 textarea {
+      height: 142px;
+      width: 324px;
+      resize: none;
+    }
 
-#msg {
-    color: black;
-    font-size: 20px;
-    margin-bottom: 1vh;
-}
+    label {
+      color: white;
+    }
+    button{
+      width: 80px;
+      height: 40px;
+      font-size: 20px;
+    }
+    h3{
+      color: #ff2424
+    }
+    .btn{
+      width: 75px;
+      height: 40px;
+      font-size: 18px;
+    }
 
-.box2 form {
-    margin: auto;
-}
 
-.box2 label {
-    font-size: 14px;
-}
-
-    </style>
+  </style>
 </head>
 
 <body>
-  <section id="contact">
-        <div class="hero-image">
-            <div class="tit">
-                <h1 style="color: #ff2424;"> Contact us </h1>
-                <h3 style="font-size: 27px; font-size: 30px;  margin-top: 68px; letter-spacing: 1.5px; color: #ff2424;">Get in touch and let us know how we can help.</h3>
-                <p id="msg"></p>
+    <section class="contact">
+        <h1 class="text-center">Contact us</h1>
+        <h3 class="text-center" >Get in touch let us know how we can help you</h3>
+        <div class="coinatiner">
+            <div class="box" id="box1">
+                <div class="add">
+                    <img src="https://img.icons8.com/doodle/64/000000/address.png" />
+                    <p><br>Mit academy of enginnering <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alandi pune</p>
+                </div>
+                <div class="add">
+                    <img src="https://img.icons8.com/flat-round/64/000000/phone.png" />
+                    <p id="mob" style="margin-left: 35px;"><br>+917488259671</p>
+                </div>
+                <div class="add">
+                    <img src="https://img.icons8.com/fluent/48/000000/gmail--v2.png" />
+                    <p id="email" style="margin-left: 13px;"><br> deeprajshrivastava132@gmail.com </p>
+                </div>
+                <div class="add">
+                    <img src="https://img.icons8.com/fluent/48/000000/linkedin-2.png" />
+                    <a style="margin-left: 60px;" href="https://www.linkedin.com/in/deep-raj-0a4972182/"> <br>Deep Raj
+                    </a>
+                </div>
             </div>
-            <div class="cointainer">
-                <div class="box1">
-                    <div class="add">
-                        <img src="https://img.icons8.com/doodle/64/000000/address.png" />
-                        <p><br>Mit academy of enginnering <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alandi pune</p>
+            <div class="box" id="box2">
+                <p style="font-weight: bold; font-size: 20px; margin-bottom: 12px; color: white;">Send meassage</p>
+                <form onsubmit="myfunction()">
+                    <div class="form-group">
+                        <label for="usr">Full name</label>
+                        <input type="text" class="form-control" id="usr" placeholder="Enter name" name="name" required="required">
                     </div>
-                    <div class="add">
-                        <img src="https://img.icons8.com/flat-round/64/000000/phone.png" />
-                        <p id="mob"><br>+917488259671</p>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter email" name="email" required="required">
                     </div>
-                    <div class="add">
-                        <img src="https://img.icons8.com/fluent/48/000000/gmail--v2.png" />
-                        <p id="email" style="margin-left: 13px;"><br> deeprajshrivastava132@gmail.com </p>
+                    <div class="form-group">
+                        <label for="comment">Type your message</label>
+                        <textarea class="form-control" rows="5" id="comment" required="required"></textarea>
                     </div>
-                    <div class="add">
-                        <img src="https://img.icons8.com/fluent/48/000000/linkedin-2.png" />
-                        <a href="https://www.linkedin.com/in/deep-raj-0a4972182/"> <br>Deep Raj
-                        </a>
-                    </div>
-                </div>
-                <div class="box2">
-                    <p style="font-weight: bold; font-size: 20px; margin-bottom: 12px;">Send meassage</p>
-                    <form onsubmit="myfunction()">
-                        <div class="form-group">
-                            <label for="usr">Full name</label>
-                            <input type="text" class="form-control" id="usr" placeholder="Enter name" name="name" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter email" name="email" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="comment">Type your message</label>
-                            <textarea class="form-control" rows="5" id="comment" required="required"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </form>
-                </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
             </div>
         </div>
     </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
