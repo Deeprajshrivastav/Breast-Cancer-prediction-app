@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import numpy as np
 import pandas as pd
 import pickle
@@ -127,7 +127,10 @@ def predict():
     for x in request.form.values():
         x = float(x)
         input_features.append(x)
-
+        
+    if len(input_features) == 0:
+        return redirect(url_for('prediction'))
+      
     features_value = [np.array(input_features)]
     features_name = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
                      'mean smoothness', 'mean compactness', 'mean concavity',
