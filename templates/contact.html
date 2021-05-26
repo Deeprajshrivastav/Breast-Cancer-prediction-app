@@ -108,7 +108,7 @@
             </div>
             <div class="box" id="box2">
                 <p style="font-weight: bold; font-size: 20px; margin-bottom: 12px; color: white;">Send meassage</p>
-                <form onsubmit="myfunction()">
+                <form action="{{url_for('send')}}" method="post">
                     <div class="form-group">
                         <label for="usr">Full name</label>
                         <input type="text" class="form-control" id="usr" placeholder="Enter name" name="name" required="required">
