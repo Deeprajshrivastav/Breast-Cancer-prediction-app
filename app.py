@@ -13,11 +13,12 @@ name = ""
 global mobile
 mobile = "-000-"
 
-db = mysql.connector.connect(host='db4free.net',
-                             user='deep_132',
-                             passwd='deep132@raj',
-                             database='minor_132project'
-                             )
+db = mysql.connector.connect(
+    host='freedb.tech',
+    user='freedbtech_deepraj',
+    passwd='deep123@raj',
+    database='freedbtech_myminorproject'
+    )
 
 
 @app.route('/')
@@ -193,7 +194,17 @@ def submit():
   
 @app.route('/send', methods=['POST', 'GET'])
 def send():
-    return render_template('contact.html')  
+  
+    credential = []
+    for data in request.form.values():
+        credential.append(data)
+        
+    statement = "Insert into message (name, email, msg) values(%s, %s, %s)"
+    information = (credential[0], credential[1], credential[2])
+    cursor = db.cursor()
+    cursor.execute(statement, information)
+    db.commit()
+    return render_template('contact.html', contact="Thank you for contacting us.")
 
 
 if __name__ == '__main__':
