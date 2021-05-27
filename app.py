@@ -213,12 +213,11 @@ def submit():
   
 @app.route('/send', methods=['POST', 'GET'])
 def send():
-  
     credential = []
     for data in request.form.values():
         credential.append(data)
-        
-    statement = "Insert into message (name, email, msg) values(%s, %s, %s)"
+    statement = "Insert into message (name, email, msg)" \
+                " values(%s, %s, %s)"
     information = (credential[0], credential[1], credential[2])
     cursor = db.cursor()
     cursor.execute(statement, information)
