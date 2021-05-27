@@ -41,6 +41,24 @@ def logout():
     return render_template('first.html')
 
 
+# @app.route('/hom', methods=['POST', 'GET'])
+# def hom():
+#     global name
+#     global mobile
+
+#     cred = request.form["mob"]
+#     cursor = db.cursor()
+#     cursor.execute("select * from user")
+#     x = ()
+#     for i in cursor:
+#         if (i[1] == cred) or (i[2] == cred):
+#             x = i
+#     if len(x) > 1:
+#         name = x[0]
+#         mobile = x[1]
+#         return render_template('home.html', name_nam=name.title())
+#     else:
+#         return render_template('already.html', alert="Account not find !!!")
 @app.route('/hom', methods=['POST', 'GET'])
 def hom():
     global name
@@ -59,7 +77,6 @@ def hom():
         return render_template('home.html', name_nam=name.title())
     else:
         return render_template('already.html', alert="Account not find !!!")
-
 
 @app.route('/home', methods=["POST", "GET"])
 def home():
