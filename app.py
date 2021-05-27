@@ -63,8 +63,10 @@ def logout():
 def hom():
     global name
     global mobile
-
-    cred = request.form["mob"]
+    try:
+        cred = request.form["mob"]
+    except Exception:
+        return redirect(url_for('reg'))
     cursor = db.cursor()
     cursor.execute("select * from user")
     x = ()
