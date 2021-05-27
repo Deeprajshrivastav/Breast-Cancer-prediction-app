@@ -215,7 +215,7 @@ def submit():
     db.commit()
     return render_template('last.html')
   
-  
+
 @app.route('/send', methods=['POST', 'GET'])
 def send():
     credential = []
@@ -227,7 +227,7 @@ def send():
     cursor = db.cursor()
     cursor.execute(statement, information)
     db.commit()
-    return render_template('contact.html', contact="Thank you for contacting us.")
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':
