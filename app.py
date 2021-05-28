@@ -13,18 +13,18 @@ name = ""
 global mobile
 mobile = "-000-"
 
-# db = mysql.connector.connect(
-#     host='freedb.tech',
-#     user='freedbtech_deepraj',
-#     passwd='deep123@raj',
-#     database='freedbtech_myminorproject'
-#     )
 db = mysql.connector.connect(
-    host='db4free.net',
-    user='deep_132',
-    passwd='deep132@raj',
-    database='minor_132project'
-)
+    host='freedb.tech',
+    user='freedbtech_deepraj',
+    passwd='deep123@raj',
+    database='freedbtech_myminorproject'
+    )
+# db = mysql.connector.connect(
+#     host='db4free.net',
+#     user='deep_132',
+#     passwd='deep132@raj',
+#     database='minor_132project'
+# )
 
 @app.route('/')
 def start():
